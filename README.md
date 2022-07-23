@@ -5,7 +5,7 @@ In order to expose the apps, we use traefik as a proxy.
 
 _PS: Kubernetes files are taken from https://doc.traefik.io/traefik/user-guides/crd-acme/ which is an **excellent** documentation/tutorial._
 
-In order for everything to run smoothly, I run these scripts on a fresh install. My tests were run on a Debian 11 bare metal virtual machine.
+In order for everything to run smoothly, I run these scripts on a fresh install.
 
 ## 1- Minikube setup
 Run `./setup-minikube/setup-minikube.sh`
@@ -33,3 +33,12 @@ Under **_examples_**, you can find examples of apps to run.
 |    Resources    | Application |              Changes needed               |
 |:---------------:|:-----------:|:-----------------------------------------:|
 | examples/whoami |   whoami    | Replace the host in the ingress.yaml file |
+
+---
+
+I ran these scripts on:
+- Debian 11
+- Kubernetes client: v1.24.3
+- Kubernetes server: v1.24.1
+- minikube: v1.26.0
+- Docker: 20.10.17
