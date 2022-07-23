@@ -1,9 +1,9 @@
 # Bare metal Development Kubernetes Cluster
 
 The goal of the projet is the setup a fast minikube cluster where apps are externally exposed. 
-In order expose the apps we use traefik as a proxy.
+In order to expose the apps, we use traefik as a proxy.
 
-_PS: Kubernetes files are taken from https://doc.traefik.io/traefik/user-guides/crd-acme/ which an **excellent** tutorial._
+_PS: Kubernetes files are taken from https://doc.traefik.io/traefik/user-guides/crd-acme/ which is an **excellent** documentation/tutorial._
 
 In order for everything to run smoothly, I run these scripts on a fresh install. My tests were run on a Debian 11 bare metal virtual machine.
 

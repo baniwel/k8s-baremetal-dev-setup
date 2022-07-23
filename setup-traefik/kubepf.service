@@ -1,0 +1,17 @@
+[Unit]
+Description=Start kube port forwarding of ports 8000/8080/443
+After=network-online.target
+
+[Service]
+Type=simple
+
+UMask=007
+
+ExecStart=kubectl port-forward --address 0.0.0.0 service/traefik 8000:8000 8080:8080 443:4443
+Restart=on-failure
+
+# Configures the time to wait before service is stopped forcefully.
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target
