@@ -11,7 +11,7 @@ echo 'alias kc="kubectl"' >>~/.bashrc
 echo 'alias kca="kubectl apply -f"' >>~/.bashrc
 
 # Setup autocompletions
-echo "$(minikube completion bash)"
-eval "$(kubectl completion bash)"
+echo "$(minikube completion bash)" >>~/.bashrc
+echo "eval \"$(kubectl completion bash)\"" >>~/.bashrc
 
 source ~/.profile

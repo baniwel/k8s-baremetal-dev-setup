@@ -1,6 +1,6 @@
 # Bare metal Development Kubernetes Cluster
 
-The goal of the projet is the setup a fast minikube cluster where apps are externally exposed. 
+The goal of the projet is to setup a fast minikube cluster where apps are externally exposed. 
 In order to expose the apps, we use traefik as a proxy.
 
 _PS: Kubernetes files are taken from https://doc.traefik.io/traefik/user-guides/crd-acme/ which is an **excellent** documentation/tutorial._
