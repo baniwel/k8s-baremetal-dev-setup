@@ -15,6 +15,7 @@ echo \
 
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+#TODO check why the script stops after apt-get install
 
 # Permettre à minikube de lancer le driver local pas en mode root
 sudo usermod -aG docker $USER && newgrp docker
