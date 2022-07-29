@@ -23,6 +23,7 @@ echo "Install docker"
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin > /dev/null
 
 # Permettre à minikube de lancer le driver local pas en mode root
+sudo chmod 666 /var/run/docker.sock
 sudo usermod -aG docker $USER && newgrp docker
 
 docker version
