@@ -12,8 +12,11 @@ for filename in *.yaml; do
   kubectl apply -f "$filename"
 done
 
-# TODO : run "minikube tunnel"
-# TODO : create a service for the minikube tunnel
+# Create minikube-tunnel service
+mkdir -p ~/.config/systemd/user
+cp ./minikube-tunnel.service ~/.config/systemd/user
+systemctl --user enable minikube-tunnel
+systemctl --user start minikube-tunnel
 # TODO : check if route is 10.96.0.0/12 on a fresh install
 # TODO : add external ip 10.96.184.178 (used in nginx.conf) to service/traefik
 
