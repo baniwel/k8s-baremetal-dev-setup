@@ -22,5 +22,5 @@ systemctl --user start minikube-tunnel
 
 # Port forward
 sudo apt-get install -y nginx
-sudo cat nginx.conf >> /etc/nginx/nginx.conf
+cat nginx.conf | sudo tee -a /etc/nginx/nginx.conf
 sudo service nginx restart
