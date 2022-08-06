@@ -7,7 +7,9 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`your.example.com`) && PathPrefix(`/notls`)
+    - match: Host(`your.example.com`) && PathPrefix(`/`)
+      middlewares:
+        - name: tls-redirect
       kind: Rule
       services:
         - name: whoami
@@ -23,7 +25,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`your.example.com`) && PathPrefix(`/tls`)
+    - match: Host(`your.example.com`) && PathPrefix(`/`)
       kind: Rule
       services:
         - name: whoami

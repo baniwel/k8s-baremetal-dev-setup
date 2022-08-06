@@ -24,8 +24,9 @@ Run `./setup-traefik/setup-traefik.sh`
 This script will:
 1. Setup a fresh minikube cluster
 2. Install traefik on the cluster by applying the kubernetes .yaml files under **_setup-traefik_**
-3. **!! Elevate kubectl and allow the binary to bind low level ports (needed for port 443 binding) !!**
-4. Creates and runs a systemd service **kubepf** that will port forward ports between the cluster and the machine
+3. Creates and runs a systemd service **minikube-tunnel** that will create a minikube tunnel to allow redirecting to kubernetes pods
+4. Install nginx et set configs for redirection to the cluster when hitting both ports 80 and 443
+PS: All port 80 connections are redirected to the cluster, rules must be added if you're nginx is being used for other purposes.
 
 ## 3- Examples
 Under **_examples_**, you can find examples of apps to run.

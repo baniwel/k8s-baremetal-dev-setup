@@ -17,10 +17,9 @@ mkdir -p ~/.config/systemd/user
 cp ./minikube-tunnel.service ~/.config/systemd/user
 systemctl --user enable minikube-tunnel
 systemctl --user start minikube-tunnel
-# TODO : check if route is 10.96.0.0/12 on a fresh install
-# TODO : add external ip 10.96.184.178 (used in nginx.conf) to service/traefik
 
 # Port forward
 sudo apt-get install -y nginx
 cat nginx.conf | sudo tee -a /etc/nginx/nginx.conf
+cat nginx-default.conf | sudo tee /etc/nginx/sites-enabled/default
 sudo service nginx restart
