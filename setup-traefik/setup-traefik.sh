@@ -1,8 +1,10 @@
 #!/bin/bash
 
+mkdir /home/debian/data
+
 # Run fresh minikube with extra config to allow for port forwarding to keep going
 minikube delete
-minikube start
+minikube start --hyperv-virtual-switch "My Virtual Switch" --v=4 --mount --mount-string="/home/debian/data/:/data/"
 
 # Enable the Ingress addon
 minikube addons enable ingress
